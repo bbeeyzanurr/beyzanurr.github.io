@@ -1,0 +1,498 @@
+#R, S programlama dili üzerine yazılan ve istatistiksel analizlerin R içindeki kütüphaneler yardımıyla 
+#kolay bir şekilde yapılmasını sağlayan bir platformdur.
+#R programlama diline giriş yaparken öncelikle basit aritmetik işlemler başlayacağız.
+
+
+#Toplama
+4+2
+
+#Çıkarma
+4-2
+
+#Çarpma
+4*2
+
+#Bölme
+4/2
+
+#Bölümden kalan
+10 %% 6
+
+#Bölme işlemindeki bölüm
+10 %/% 6
+
+##R'da hatalar
+
+2+-*3
+#Burada beklenmedik bir sembol hatası aldık
+
+##Veri Tipleri
+#character
+#numeric
+#integer
+#logical
+#complex
+
+#character
+"CADS DSPG"
+
+#numeric
+10
+
+#integer
+2L
+
+#logical
+TRUE
+FALSE
+T
+F
+
+#complex
+1+2i
+
+
+##-----------R Objeleri Oluşturma (Değişken Atama)---------------
+
+#R'da bazı fonksiyonlar objelerle çalışır. Dolayısıyla bir fonksiyonun çalışması için obje oluşturma (değişken atama)
+#yapmamız gerekir. Bunu "<-" veya "=" sembolleriyle yapabiliriz. Fakat "=" başka işlemlerle de kullanıldığı için
+#genelde "<-" sembolü kullanarak atama yapmayı tercih edebiliriz.
+
+#Bir karakter objesi (değişkeni) oluşturalım
+
+objem <- "Veri Bilimi"
+
+class(objem)
+
+str(objem)
+
+
+#Bir numeric obje oluşturalım
+
+numerik_objem <- 123.456
+
+class(numerik_objem)
+
+str(numerik_objem)
+
+#-Egzersiz-
+#numerik1 ve numerik2 objelerine (değişkenlerine) 4 ve 2 rakamlarını atayıp bu iki objei toplayalım.
+#Bu toplamı "numeriklerim" isimli değişkene atayıp verinin tipini inceleyelim.
+
+numerik1 <- 4
+numerik2 <- 2
+
+numerik1 + numerik2
+
+numeriklerim <- numerik1 + numerik2
+
+class(numeriklerim)
+
+
+#-Egzersiz-
+#a'nın 10 b'nin 2 olduğu iki numerik değişken oluşturalım. Bu iki değişkeni çarptıktan sonra c isimli değişkene 
+#atayalım. Sonrasında ise c'nin b üstünü (^) sembolü kullanarak alalım.
+
+a <- 10
+
+b <- 2
+
+c <- a*b
+
+c^b
+
+#----------Logical (Mantıksal)------------
+#Mantıksal operatörler R’da TRUE ve FALSE ile ifade edilmektedir. 
+#Bir ifadenin doğruluğunu veya yanlışlığını belirlemek amaçlı kullanılır. 
+#Aynı zamanda, TRUE 1 rakamına eşit olup FALSE ise 0 rakamına eşittir. 
+#R’da Mantıksal operatörler veriyi manipüle etmede (filtreleme, veriden kesit alma, döngüler)
+#oldukça önemli ve kullanışlıdır.
+
+TRUE
+
+FALSE
+
+T
+
+F
+
+TRUE==1
+
+FALSE==0
+
+mantıksal <- TRUE
+
+class(mantıksal)
+
+#Bir karşılaştırma yapmak istersek "==" ifadesini kullanıyoruz. "=" atama ve fonksiyon argümanlarında
+#kullanılan bir semboldür.
+
+#---------Vektörler--------
+#R vektörleri aynı tip elemanlardan (veriden) oluşan bir koleyksiyondur. 
+#Bir vektör sadece aynı tip elemanlara sahip olabilir. 
+#İleride işlenecek olan değişken ve Data Frame konularında değişkenleri oluşturmada kullanılır. 
+#Bir vektör "c()" ifadesi ile oluşturulur.
+
+vektorum <- c("Hello", "World", "Third Element")
+
+class(vektorum)
+
+#-Egzersiz-
+#vektorum1 isimli ve elemanları "DSPG", "CADS", "TEDU" olan bir vektör oluşturalım.
+#sonrasında isi genelvektor isimli vektörümüzü vektorum ve vektorum1 vektörlerini kullanarak oluşturalım.
+
+vektorum1 <- c("DSPG", "CADS", "TEDU")
+
+genelvektor <- c(vektorum, vektorum1)
+
+genelvektor
+
+##Numerik Vektörler
+
+numerik_vek <- c(1,2,3,4,5)
+
+class(numerik_vek)
+
+numerik_vek1 <- c(6,7,8,9,10)
+
+class(numerik_vek1)
+
+genel_numerik <- numerik_vek + numerik_vek1
+
+genel_numerik
+
+class(genel_numerik)
+
+#Belli bir aralıkla bir sayı vektörü oluşturmak istersek:
+
+1:10
+
+c(1:10)
+
+seq(from=1, to=10, by=2)
+
+#-Egzersiz-
+#1'den 20'ye kadar ":" operatörüyle "aralık" isimli vektör oluşturalım. Oluşturduğumuz bu vektörü 10 ile
+#çarpıp aralık10 isimli bir vektör oluşturalım.
+
+aralık <- 1:20
+
+aralık10 <- aralık*10
+
+aralık10
+
+#-Egzersiz-
+#Kiloları 65, 70, 80, 90, ve 100 olan, boyları ise 1.65, 1.75, 1.85, 1.9, ve 2.0 olan 
+#öğrencilerin kilo ve boy isimli vektörlerini oluşturalım. 
+#Ayrı ayrı hem kilo hem boy ortalamalarını bulalım.
+#İpucu: Vektörler oluşturulduktan sonra mean() fonksiyonun içine oluşturduğumuz vektör isimlerini yazarak ortalamaları bulabiliriz.
+
+kilo <- c(65,70,80,90, 100)
+boy <- c(1.65, 1.75, 1.85, 1.9, 2.0)
+mean(kilo)
+mean(boy)
+
+#---------Matrisler---------
+#Matrisler çok boyutlu vektörlerdir. Matris fonksiyonuyla oluşturulurlar argüman olarak 
+#satır ve sütun sayısıyla birlikte yuvalara yerleşecek olan verileri alırlar.
+
+m <- matrix(1:20, nrow=4, ncol = 5)
+
+m
+
+#Hücre sayısı ile veri sayısı eşit olmadığında ise:
+
+m1 <- matrix(1:16, nrow=4, ncol=5)
+
+m1
+
+
+#cbind() ve rbind() fonksiyonları
+
+v <- 1:5
+x <- 6:10
+cbind(v, x)
+
+#-Egzersiz-
+#rbind() fonksiyonu kullanarak oluşturduğumuz vektörleri birleştirelim
+
+rbind(v,x)
+
+#-Egzersiz-
+#Önceden oluşturduğumuz "kilo" ve "boy" değişkenlerini hem matrix() fonksiyonu hem cbind() kullanarak
+#matrislerimizi oluşturalım.
+
+cbind(kilo, boy)
+
+matrix(c(kilo, boy), ncol=2)
+
+#Eğer matris değişkenlerine isim vermek istersek:
+
+matrix(c(kilo, boy), ncol=2, dimnames = list(c(),c("kilo", "boy")))
+
+
+
+#--------Faktörler(Factors)-----------
+#Faktörler, R’da kategorik bilgilerin tutulduğu yerlerdir. Kısacası etiketli vektörlerdir. 
+#Çoğu zaman kategorik verileri gerek görselleştirme yaparken gerek istatistiksel analizler yaparken 
+#veri tipini factor olarak değiştiriyoruz.
+
+f <- factor(c("Hello", "World", "Hello", "Annie", "Hello", "World"))
+f
+
+f <- c("Hello", "World", "Hello", "Annie", "Hello", "World")
+f <- factor(f)
+f
+class(f)
+#f vektörümüz artık faktör olduğu için table() fonksiyonu kullanarak f vektöründeli verilerin 
+#sıklığını elde edebiliriz.
+
+table(f)
+
+#-Egzersiz-
+#Şampiyonlar ligini 7 kere kazanan Milan, 5 kere kazanan Liverpool ve 5 kere kazanan Barcelona’nın
+#vektörünü oluşturalım. Oluşturulan vektörü faktör veri tipi olarak değiştirelim. 
+#Sonrasında ise hem table() hem de summary() fonksiyonunu kullanarak toplam kazandıkları kupaları görelim.
+#İpucu: Herhangi bir veriyi tekrarlı girmek için rep() fonksiyonunu kullanalım.
+
+Milan <- c("Milan", "Milan", "Milan", "Milan", "Milan", "Milan", "Milan")
+Liverpool <- c("Liverpool", "Liverpool", "Liverpool", "Liverpool", "Liverpool")
+Barcelona <- c("Barcelona", "Barcelona", "Barcelona", "Barcelona", "Barcelona")
+
+champions <- c(Milan, Liverpool, Barcelona)
+class(champions)
+champions <- factor(champions)
+
+table(champions)
+summary(champions)
+
+champions <- factor(c(rep("Milan",7), rep("Liverpool", 5), rep("Barcelona", 5)))
+table(champions)
+summary(champions)
+
+
+#--------Data Frame-------
+
+#Data Frame değişkenlerden ve gözlemlerden oluşan yapılandırılmış bir tablodur. 
+#Bir Data Frame’in karakteristikleri aşağıdaki gibidir:
+#Kolon isimleri (değişken isimleri) boş olmamalıdır
+#Satır isimleri özgün olmalıdır
+#Data frame’de depolanan veri tipi numerik, faktör ya da karakter olmalıdır
+#Her kolon (değişken) ise eşit sayıda veri içermelidir
+
+#Data Frame Oluşturma
+
+myframe <- data.frame(
+  ogrenci_id = c(1:5), 
+  ogrenci_ad = c("Ayşe","Fatma","Ali","Mehmet","Zeynep"),
+  kilo = c(48, 56, 75, 89, 53), 
+  boy = c(160, 165, 177, 196, 169)
+)
+
+myframe
+
+#Data Frame yapısı: str()
+
+str(myframe)
+
+#Data Frame özeti: summary()
+
+summary(myframe)
+
+#Data Frame ilk 5 gözlem: head() 
+
+head(myframe)
+
+#Data Frame son 3 gözlem: tail()
+
+tail(myframe, n=3)
+
+#Data Frame yeni kolon ekleme: $
+
+myframe$ders_notu <- c("A", "B", "C", "A", "A")
+myframe
+
+#Data Frame kolon silme: NULL
+
+myframe$ders_notu <- NULL
+myframe
+
+#-Egzersiz-
+#Öğrencilerin matematik harf notlarını, "harf_notu" değişken ismiyle oluşturduğumuz data frame’e ekleyelim. 
+#Harf notunu faktör veri tipine çevirip. Data frame’in özetine bakalım.
+
+myframe$harf_notu <- c("A", "B", "C", "A", "A")
+myframe$harf_notu <- factor(myframe$harf_notu)
+summary(myframe)
+
+#---------R Notasyonları----------
+#R programlama dilinde endeksleme 1’den başlar. 
+#Dolayısıyla bir vektörde veya data framede bir veya birden fazla kesit seçeceğimiz zaman bunu dikkate alarak seçim yapmalıyız.
+
+#Vektörden eleman seçme
+
+myvec <- c(1,2,3,4,5)
+myvec[2]
+
+#Bir vektördeki bir elemanı değiştirmek istersek:
+
+myvec[2] <- 7
+myvec
+
+#Data Frame'den kesit alma
+#Köşeli parantezin soluna satırdan bir kesit, köşeli parantezin sağına kolonlardan kesit almak için kullanılır.
+
+#Data Frame'den 1. satırı seçme
+myframe[1,]
+
+myframe
+
+#Data Frame'den 2. kolonu seçme
+myframe[,2]
+
+myframe
+
+#Data Frame'den 2. satır 3. sütunu seçme
+
+myframe[2,3]
+
+#Direkt olarak kolon ismi ile de istediğimiz kolonu seçebiliyoruz.
+
+myframe[,"kilo"]
+
+#-Egzersiz-
+#Oluşturduğumuz veri setinde Ayşe'nin kilosunu elde edelim
+
+myframe[1, "kilo"]
+
+myframe[1, 3]
+
+#Kilo ve boy kolonlarını endeksleyerek elde etme
+
+myframe[,c(3,4)]
+
+myframe[,c("kilo", "boy")]
+
+myframe[,3:4]
+
+#-Egzersiz-
+#myframe veri setimizdeki 1. kişinin kilosunu 65 olarak değiştirelim
+
+myframe[1,"kilo"] <- 65
+
+myframe[1,3] <- 65
+
+myframe
+
+#Negatif Endeksleme
+#"-" simgesiyle belirttiğimiz kolon ya da satır hariç diğer şeyleri seçmemizi sağlar
+
+myframe[-1,]
+myframe[,-1]
+
+#-Egzersiz-
+#myframe veri setinden ilk kolon hariç 1'den 4'e kadar olan satırları seçelim. Kesit alınmış
+#veri setimizden Ayşe'nin harf notunu elde edelim.
+
+myframe[1:4,-1]
+
+myframe[1:4,-1][1,"harf_notu"]
+
+#$ (Dolar Simgesi)
+#Özellikle data frame içinde bir değişkeni seçmek için kullanılır. 
+#Ayrıca listelerin içinde oluşturulan elementleri seçmek için de kullanılır.
+
+myframe$kilo
+
+mean(myframe$kilo)
+
+mean(myframe[,"kilo"])
+
+#-Egzersiz-
+#Ali, Mehmet ve Zeynep'in boylarının ortancasını "median()" fonksiyonu ile bulalım.
+
+median(myframe[3:5,"boy"])
+
+median(myframe$boy[3:5])
+
+#Bir Data Frame'de satırlara tekil isim verme
+#Örneğin oluşturduğumuz myframe veri setinde satır isimlerini 1,2,3,4 ve 5 yerine öğrenci isimleri de
+#tekil olduğu için öğrenci isimlerini satır isimleri yapabiliriz.
+
+rownames(myframe) <- myframe$ogrenci_ad
+
+myframe
+
+myframe["Ayşe", "kilo"]
+
+#-------------R Listeler--------------
+#Liste farklı yapılardaki verilerin depolanabildiği bir operatördür. 
+#Boyut ve veri tipi farketmeksizin liste içinde objelerimizi depolayabiliriz.
+
+mylist <- list(sayılar = c(1,2,3,4,5,6), karakterler = c("DSPG", "CADS", "TEDU"), mantıksal = c(TRUE, FALSE, TRUE), myframe)
+
+mylist
+
+mylist$sayılar
+
+#-Egzersiz-
+#Oluşturduğumuz mylist listemizden myframe veri setine erişip Mehmet'in boyuna ulaşalım.
+
+mylist[[4]]["Mehmet", "boy"]
+
+mylist[[4]]$boy[4]
+
+#-Egzersiz-
+#Oluşturduğumuz mylist listemizden myframe veri setine erişip Zeynep'in kilosunu 60 olarak değiştirip
+#yeniset isimli data frame olarak atayalım.
+
+mylist[[4]]["Zeynep","kilo"] <- 60
+
+yeniset <- mylist[[4]]
+
+yeniset
+
+#-Genel Egzersiz-
+#İskambil Destesi Oluşturma
+#1.Her simgeden (maça, sinek, karo, kupa) 13 adet olacak şekilde “simge” isimli bir kolon oluşturalım.
+#2.Her simgeye karşılık gelen “papaz”, “kız”, “vale”, “10”, “9”, “8”, “7”, “6”, “5”, “4”, “3”, “2”, “as” kart yüzünü “kart” isimli bir kolon olarak oluşturalım.
+#3.Her karta karşılık gelen kartın değerini ise sırasıyla “papaz”, “kız”, “vale”, “10”, “9”, “8”, “7”, “6”, “5”, “4”, “3”, “2”, “as” kartlarına 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 sayıları denk gelecek şekilde “değer” isimli kolonu oluşturalım.
+#4.Oluşturduğumuz bu kolonlarla “deste” isimli data frame oluşturalım.
+#5.Oluşturduğumuz verisetinin yapısına, özetine, ilk 5 ve son 5 satırına bakalım.
+#İpucu daha önceden de kullandığımız rep() fonksiyonunu tekrarlı girdiler için kullanabiliriz.
+
+deste <- data.frame(
+  simge = c("maça", "maça", "maça", "maça", "maça", "maça",
+            "maça", "maça", "maça", "maça", "maça", "maça", "maça",
+            "sinek", "sinek", "sinek", "sinek", "sinek", "sinek", "sinek", "sinek",
+            "sinek", "sinek", "sinek", "sinek", "sinek", "karo", "karo",
+            "karo", "karo", "karo", "karo", "karo", "karo",
+            "karo", "karo", "karo", "karo", "karo", "kupa",
+            "kupa", "kupa", "kupa", "kupa", "kupa", "kupa", "kupa",
+            "kupa", "kupa", "kupa", "kupa", "kupa"),
+  
+  kart = c("papaz", "kız", "vale", "on", "dokuz", "sekiz", "yedi", "altı",
+           "beş", "dört", "üç", "iki", "as", "papaz", "kız", "vale", "on",
+           "dokuz", "sekiz", "yedi", "altı", "beş", "dört", "üç", "iki", "as",
+           "papaz", "kız", "vale", "on", "dokuz", "sekiz", "yedi", "altı", "beş",
+           "dört", "üç", "iki", "as", "papaz", "kız", "vale", "on", "dokuz",
+           "sekiz", "yedi", "altı", "beş", "dört", "üç", "iki", "as"),
+  
+  
+  değer = c(13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 13, 12, 11, 10, 9, 8,
+            7, 6, 5, 4, 3, 2, 1, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 13, 12, 11,
+            10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+)
+
+deste <- data.frame(simge = c(rep("maça",13), rep("sinek",13), rep("karo",13), rep("kupa",13)),
+                    
+                    kart = rep(c("papaz","kız","vale","on","dokuz", "sekiz", "yedi", "altı",
+                                   "beş", "dört", "üç", "iki", "as"),4),
+                    
+                    değer = rep(c(13,12,11,10,9,8,7,6,5,4,3,2,1),4)
+                    )
+
+head(deste)
+tail(deste)
+str(deste)
+summary(deste)
