@@ -1,11 +1,10 @@
-## Welcome to GitHub Pages
+## Beyzanur'un Çalışmaları 
 
-You can use the [editor on GitHub](https://github.com/bbeeyzanurr/beyzanurr.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Beyzanur 'un sayfasına hoşgeldiniz
+Yaptığım çalışmaları ve ağlarıma burdan ulaşabilirsiniz (https://www.linkedin.com/in/beyzanur-zengince-7856a5198) 
 
 ### Markdown
-
+ 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
