@@ -1,7 +1,12 @@
-## Beyzanur'un Çalışmaları 
+## Github Sayfama Hoşgeldiniz 
 
-Beyzanur 'un sayfasına hoşgeldiniz
-Yaptığım çalışmaları ve ağlarıma burdan ulaşabilirsiniz (https://www.linkedin.com/in/beyzanur-zengince-7856a5198) 
+Merhaba 👋 Ben Beyzanur
+
+💻Bilişim Teknolojileri Halk Eğitim Merkezi | Usta Öğretici
+✏️İstatistik Yüksek Lisans Öğrencisi 
+🧐Data science -Deep Learning - Natural Language Understanding  üzerinde çalışıyorum 
+ 
+Bana  burdan ulaşabilirsiniz   (https://www.linkedin.com/in/beyzanur-zengince-7856a5198) 
 
 ### Çalışmalarım
  
