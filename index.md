@@ -4,16 +4,16 @@ Merhaba 👋 Ben Beyzanur
 
 💻Bilişim Teknolojileri Halk Eğitim Merkezi | Usta Öğretici
 ✏️İstatistik Yüksek Lisans Öğrencisi 
-🧐Data science -Deep Learning - Natural Language Understanding  üzerinde çalışıyorum 
+🧐Veri Bilimi - Derin Öğrenme  - Doğal Dil İşleme   üzerinde çalışıyorum 
  
 Bana  burdan ulaşabilirsiniz   (https://www.linkedin.com/in/beyzanur-zengince-7856a5198) 
 
-### Çalışmalarım
- 
-Rassallık Testlerinde Run Test 
-R - studio Veri görselleştirme 
-SPSS Çoklu Doğrusal Regresyon 
+# Çalışmalarım
 
+Bilgisayarsız kodlama alanında içerikler yazıyor ve eğitimler veriyorum .
+Yapay zeka ile ilgili eğitim içerikleri yazıyorum .
+SPSS'de Regresyon ,Çoklu Regresyon ,Faktör Analizi istatiksel analizler yapmaktayım .
+R ile Veri Bilimi Ve Makine Öğrenmesi çalışmaları yapmaktayım .
 
 # Header 1
 ## Header 2
