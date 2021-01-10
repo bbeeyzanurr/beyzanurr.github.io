@@ -3,12 +3,12 @@
 Beyzanur 'un sayfasına hoşgeldiniz
 Yaptığım çalışmaları ve ağlarıma burdan ulaşabilirsiniz (https://www.linkedin.com/in/beyzanur-zengince-7856a5198) 
 
-### Markdown
+### Çalışmalarım
  
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Rassallık Testlerinde Run Test 
+R - studio Veri görselleştirme 
+SPSS Çoklu Doğrusal Regresyon 
 
-```markdown
-Syntax highlighted code block
 
 # Header 1
 ## Header 2
